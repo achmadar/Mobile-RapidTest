@@ -3,6 +3,10 @@ package com.learn.app.kotlinrapidtest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.activity_dashboard.*
 
 class DashboardActivity : AppCompatActivity() {
@@ -32,6 +36,28 @@ class DashboardActivity : AppCompatActivity() {
             val intent = Intent(context, MenuHasil::class.java)
             startActivity(intent)
         }
+
+        var menu : Menu = navigation.menu
+        selectedMenu(menu.getItem(0))
+        navigation.setOnNavigationItemSelectedListener {
+                item: MenuItem ->  selectedMenu(item)
+
+            false
+        }
+
+    }
+
+    private fun selectedMenu(item : MenuItem) {
+        item.isChecked = true
+        when(item.itemId) {
+            R.id.navigation_home -> selectedFragment(ProfileFragment.getInstance())
+        }
+    }
+
+    fun selectedFragment(fragment: Fragment) {
+        var transaction : android.app.FragmentTransaction? = fragmentManager.beginTransaction()
+        transaction?.replace(R.id.fragment, fragment)
+        transaction?.commit()
 
     }
 }

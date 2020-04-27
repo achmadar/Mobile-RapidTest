@@ -19,6 +19,7 @@
             android:orientation="horizontal">
 
             <ImageButton
+                android:id="@+id/kembali_hasil"
                 android:src="@drawable/btn_back_white"
                 android:background="@color/cardview_shadow_end_color"
                 android:layout_width="wrap_content"

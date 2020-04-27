@@ -47,6 +47,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
+
+            <EditText
+                android:id="@+id/reg_username"
+                android:hint="Username"
+                android:background="@drawable/form_input"
+                android:paddingLeft="25dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+            <EditText
+                android:id="@+id/reg_password"
+                android:hint="Password"
+                android:background="@drawable/form_input"
+                android:paddingLeft="25dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="25dp"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+            <EditText
+                android:id="@+id/reg_konfirm_password"
+                android:hint="Konfirmasi Password"
+                android:background="@drawable/form_input"
+                android:paddingLeft="25dp"
+                android:paddingBottom="5dp"
+                android:paddingRight="25dp"
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"/>
+
+
             <EditText
                 android:id="@+id/reg_nama"
                 android:hint="Nama Lengkap"
@@ -114,36 +148,6 @@
             <EditText
                 android:id="@+id/reg_gol_darah"
                 android:hint="Golongan Darah"
-                android:background="@drawable/form_input"
-                android:paddingLeft="25dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"/>
-
-            <EditText
-                android:id="@+id/reg_username"
-                android:hint="Username"
-                android:background="@drawable/form_input"
-                android:paddingLeft="25dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"/>
-
-            <EditText
-                android:id="@+id/reg_password"
-                android:hint="Password"
-                android:background="@drawable/form_input"
-                android:paddingLeft="25dp"
-                android:paddingBottom="5dp"
-                android:paddingRight="25dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"/>
-
-            <EditText
-                android:id="@+id/reg_konfirm_password"
-                android:hint="Konfirmasi Password"
                 android:background="@drawable/form_input"
                 android:paddingLeft="25dp"
                 android:paddingBottom="5dp"

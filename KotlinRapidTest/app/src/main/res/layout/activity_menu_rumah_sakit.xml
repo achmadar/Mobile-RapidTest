@@ -14,13 +14,14 @@
         android:orientation="horizontal">
 
         <ImageButton
+            android:id="@+id/kembali_rs"
             android:src="@drawable/btn_back_white"
             android:background="@color/cardview_shadow_end_color"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"/>
 
         <TextView
-            android:text="Antrian"
+            android:text="Rumah Sakit"
             android:textColor="@color/colorWhite"
             android:textSize="30sp"
             android:layout_marginRight="60dp"
@@ -31,7 +32,6 @@
 
     </LinearLayout>
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -41,8 +41,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/list_antrian"
+            <androidx.recyclerview.widget.RecyclerView
+                android:padding="15dp"
+                android:id="@+id/list_rs"
+                android:layout_gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
