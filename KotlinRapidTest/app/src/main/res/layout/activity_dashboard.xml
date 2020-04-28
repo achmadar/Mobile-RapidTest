@@ -35,7 +35,7 @@
     <LinearLayout
         android:gravity="center"
         android:layout_below="@id/top"
-        android:layout_above="@id/navigation"
+        android:layout_above="@id/bottom_btn"
         android:background="@color/colorWhite"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -86,24 +86,30 @@
 
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/navigation"
-        android:layout_alignParentTop="true">
-
-    </FrameLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="20dp"
-        android:layout_gravity="bottom"
-        android:background="@color/colorWhite"
-        app:menu="@menu/navigation"
+    <LinearLayout
+        android:id="@+id/bottom_btn"
         android:layout_alignParentBottom="true"
-        />
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:src="@drawable/menu_home"
+            android:layout_marginRight="80dp"
+            android:background="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/menu_profile"
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/menu_profile"
+            android:background="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     </RelativeLayout>

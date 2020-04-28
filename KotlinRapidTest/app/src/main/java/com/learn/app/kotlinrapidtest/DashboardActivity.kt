@@ -37,27 +37,9 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        var menu : Menu = navigation.menu
-        selectedMenu(menu.getItem(0))
-        navigation.setOnNavigationItemSelectedListener {
-                item: MenuItem ->  selectedMenu(item)
-
-            false
+        menu_profile.setOnClickListener {
+            val intent = Intent(context, ProfileActivity::class.java)
+            startActivity(intent)
         }
-
-    }
-
-    private fun selectedMenu(item : MenuItem) {
-        item.isChecked = true
-        when(item.itemId) {
-            R.id.navigation_home -> selectedFragment(ProfileFragment.getInstance())
-        }
-    }
-
-    fun selectedFragment(fragment: Fragment) {
-        var transaction : android.app.FragmentTransaction? = fragmentManager.beginTransaction()
-        transaction?.replace(R.id.fragment, fragment)
-        transaction?.commit()
-
     }
 }
