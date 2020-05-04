@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -20,10 +21,14 @@ class LoginActivity : AppCompatActivity() {
 
         val context = this
 
+        back_start.setOnClickListener {
+            val intent = Intent(context, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         btn_register.setOnClickListener {
 
             val intent = Intent(context, RegisterActivity::class.java)
-
             startActivity(intent)
         }
 
@@ -50,7 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
     fun postkeserver(data1: String, data2: String) {
 
-        AndroidNetworking.post("http://192.168.0.5/api-rapidtest/pasien/ceklogin.php")
+        AndroidNetworking.post("http://192.168.0.7/api-rapidtest/pasien/ceklogin.php")
             .addBodyParameter("username", data1)
             .addBodyParameter("password", data2)
             .setPriority(Priority.MEDIUM)
@@ -73,6 +78,9 @@ class LoginActivity : AppCompatActivity() {
 
                             startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
                             finish()
+
+
+
                         } else {
                             info.setText("Username atau Password Salah!")
                         }
