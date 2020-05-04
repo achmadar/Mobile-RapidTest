@@ -3,21 +3,21 @@ package com.learn.app.kotlinrapidtest
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>): RecyclerView.Adapter<AdapterRumahSakit.ViewHolder>() {
-
-
+class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>, var itemClickListener : OnItemClickListener): RecyclerView.Adapter<AdapterRumahSakit.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val rs: RumahSakit=rsList[position]
+        var rs: RumahSakit=rsList[position]
         holder?.nama_rs?.text = rs.nama
         holder?.telp_rs?.text = rs.telp
         holder?.alamat_rs?.text = rs.alamat
         holder?.jadwal_rs?.text = rs.jadwal
 
+        holder.bind(rs, itemClickListener)
 
     }
 
@@ -42,5 +42,24 @@ class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>): RecyclerView.Adapte
         val telp_rs = itemView.findViewById(R.id.telp_rs) as TextView
         val alamat_rs = itemView.findViewById(R.id.alamat_rs) as TextView
         val jadwal_rs = itemView.findViewById(R.id.jadwal_rs) as TextView
+
+
+        fun bind(rs:RumahSakit, clickListener : OnItemClickListener) {
+
+            nama_rs.text = rs.nama
+            telp_rs.text = rs.telp
+            alamat_rs.text = rs.alamat
+            jadwal_rs.text = rs.jadwal
+
+            itemView.setOnClickListener {
+                clickListener.onItemClick(rs)
+            }
+        }
     }
+
+    interface OnItemClickListener{
+        fun onItemClick(rs:RumahSakit)
+    }
+
 }
+

@@ -21,7 +21,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/nama_rs"
+            android:id="@+id/antrian_nama_rs"
             android:text="Nama Rumah Sakit"
             android:textColor="@color/colorBlue"
             android:textSize="18sp"
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/kuota_rs"
+            android:id="@+id/antrian_kuota_rs"
             android:text="18/25"
             android:textColor="@color/colorBlack"
             android:textSize="23sp"

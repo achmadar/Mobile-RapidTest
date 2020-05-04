@@ -13,8 +13,16 @@ import com.androidnetworking.error.ANError
 import com.androidnetworking.interfaces.JSONObjectRequestListener
 import kotlinx.android.synthetic.main.activity_menu_rumah_sakit.*
 import org.json.JSONObject
+import java.text.FieldPosition
 
-class MenuRumahSakit : AppCompatActivity() {
+class MenuRumahSakit : AppCompatActivity(), AdapterRumahSakit.OnItemClickListener {
+
+    override fun onItemClick(rs: RumahSakit) {
+//        send data to detailed activity
+        var intent = Intent(this@MenuRumahSakit, MenuBooking::class.java)
+        intent.putExtra("nama_rs", rs.nama)
+        startActivity(intent)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +40,7 @@ class MenuRumahSakit : AppCompatActivity() {
 
         val rs = ArrayList<RumahSakit>()
 
-        AndroidNetworking.get("http://192.168.0.5/api-rapidtest/rumahsakit/read.rumahsakit.php")
+        AndroidNetworking.get("http://192.168.0.7/api-rapidtest/rumahsakit/read.rumahsakit.php")
             .setPriority(Priority.MEDIUM)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {
@@ -52,7 +60,7 @@ class MenuRumahSakit : AppCompatActivity() {
                         rs.add(RumahSakit("$isi1", "$isi2", "$isi3", "$isi4"))
                     }
 
-                    val adapter = AdapterRumahSakit(rs)
+                    val adapter = AdapterRumahSakit(rs, this@MenuRumahSakit)
                     recyclerView.adapter = adapter
                 }
 
@@ -63,4 +71,5 @@ class MenuRumahSakit : AppCompatActivity() {
             })
 
     }
+
 }
