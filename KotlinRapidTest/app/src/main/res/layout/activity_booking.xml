@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".BookingActivity">
+
+    <LinearLayout
+        android:background="@drawable/bg_home"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/kembali_booking_activity"
+            android:src="@drawable/btn_back_white"
+            android:background="@color/cardview_shadow_end_color"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:text="Booking Antrian"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:layout_marginRight="60dp"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Isikan data di bawah!"
+            android:textSize="22sp"
+            android:textColor="@color/colorBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/book_nama_rs"
+            android:hint="Nama RS"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_border_edittext"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+
+        <EditText
+            android:id="@+id/book_nama"
+            android:hint="Nama Pasien"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_border_edittext"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/book_jadwal"
+            android:hint="Jadwal Periksa"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_border_edittext"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/book_keluhan"
+            android:hint="Keluhan"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_border_edittext"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+
+        <EditText
+            android:id="@+id/book_status"
+            android:paddingLeft="25dp"
+            android:paddingRight="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            app:cardCornerRadius="10dp"
+            android:elevation="10dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/btn_booking"
+                android:background="@drawable/bg_home"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:text="Booking"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

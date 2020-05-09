@@ -13,14 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProfileActivity"></activity>
+        <activity android:name=".BookingActivity"></activity>
+        <activity android:name=".ProfileRumahSakit" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".MenuHasil" />
         <activity android:name=".MenuAntrian" />
         <activity android:name=".MenuRumahSakit" />
-        <activity android:name=".DashboardActivity">
-        </activity>
-        <activity android:name=".MenuBooking">
-        </activity>
+        <activity android:name=".DashboardActivity" />
+        <activity android:name=".MenuBooking" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">

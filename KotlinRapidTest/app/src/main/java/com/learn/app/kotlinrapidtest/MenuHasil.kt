@@ -20,15 +20,5 @@ class MenuHasil : AppCompatActivity() {
             startActivity(kembali)
         }
 
-        var nama = intent.getStringExtra("nama_pasien")
-        var rumahsakit = intent.getStringExtra("nama_rs")
-        var jadwal = intent.getStringExtra("jadwalpilihan")
-        var nama_pasien: TextView = findViewById(R.id.hasil_nama)
-        var nama_rs: TextView = findViewById(R.id.hasil_rs)
-        var jadwal_rs: TextView = findViewById(R.id.hasil_jadwal)
-        nama_pasien.text = nama.toString()
-        nama_rs.text = rumahsakit.toString()
-        jadwal_rs.text = jadwal.toString()
-
     }
 }
