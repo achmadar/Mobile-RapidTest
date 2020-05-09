@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:background="@drawable/bg_home"
+    tools:context=".ProfileRumahSakit">
+
+    <ImageButton
+        android:id="@+id/kembali_profileRS"
+        android:src="@drawable/btn_back_white"
+        android:background="@color/cardview_shadow_end_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:background="@color/colorWhite"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="50dp"
+                android:paddingBottom="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/profile_imageRS"
+                    android:src="@drawable/medical"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"/>
+
+                <TextView
+                    android:id="@+id/prf_namaRS"
+                    android:text="Nama Rumah Sakit"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"
+                    android:layout_below="@id/profile_imageRS"
+                    android:textColor="@color/colorBlue"
+                    android:textSize="28sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/prf_txtTelp"
+                    android:text="Telp       : "
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@id/prf_namaRS"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/prf_telpRS"
+                    android:text="0898491034"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@id/prf_namaRS"
+                    android:layout_toRightOf="@id/prf_txtJadwal"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/prf_txtJadwal"
+                    android:text="Jadwal :  "
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@id/prf_txtTelp"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/prf_jadwalRS"
+                    android:text="08:00 - 15:00"
+                    android:textColor="@color/colorBlack"
+                    android:layout_below="@id/prf_telpRS"
+                    android:layout_toRightOf="@id/prf_txtJadwal"
+                    android:textSize="20sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <ImageView
+                    android:id="@+id/location"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/prf_txtJadwal"
+                    android:src="@drawable/location"
+                    android:layout_width="30dp"
+                    android:layout_height="28dp"/>
+
+                <TextView
+                    android:id="@+id/prf_alamatRS"
+                    android:text="Alamat"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/colorBlack"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/location"
+                    android:layout_below="@id/prf_jadwalRS"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+</LinearLayout>

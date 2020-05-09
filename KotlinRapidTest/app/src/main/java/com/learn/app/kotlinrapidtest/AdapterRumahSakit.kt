@@ -13,9 +13,6 @@ class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>, var itemClickListene
 
         var rs: RumahSakit=rsList[position]
         holder?.nama_rs?.text = rs.nama
-        holder?.telp_rs?.text = rs.telp
-        holder?.alamat_rs?.text = rs.alamat
-        holder?.jadwal_rs?.text = rs.jadwal
 
         holder.bind(rs, itemClickListener)
 
@@ -30,7 +27,6 @@ class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>, var itemClickListene
 
 
     override fun getItemCount(): Int {
-
         return rsList.size
     }
 
@@ -39,17 +35,13 @@ class AdapterRumahSakit (val rsList: ArrayList<RumahSakit>, var itemClickListene
     class  ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
         val nama_rs = itemView.findViewById(R.id.nama_rs) as TextView
-        val telp_rs = itemView.findViewById(R.id.telp_rs) as TextView
+        val telp_rs = itemView.findViewById(R.id.notelp_rs) as TextView
         val alamat_rs = itemView.findViewById(R.id.alamat_rs) as TextView
         val jadwal_rs = itemView.findViewById(R.id.jadwal_rs) as TextView
-
 
         fun bind(rs:RumahSakit, clickListener : OnItemClickListener) {
 
             nama_rs.text = rs.nama
-            telp_rs.text = rs.telp
-            alamat_rs.text = rs.alamat
-            jadwal_rs.text = rs.jadwal
 
             itemView.setOnClickListener {
                 clickListener.onItemClick(rs)

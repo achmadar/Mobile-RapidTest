@@ -4,6 +4,8 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.HideReturnsTransformationMethod
+import android.text.method.PasswordTransformationMethod
 import android.util.Log
 import android.view.View
 import com.androidnetworking.AndroidNetworking
@@ -14,6 +16,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 import org.json.JSONObject
 
 class LoginActivity : AppCompatActivity() {
+
+    private var showPass = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +55,25 @@ class LoginActivity : AppCompatActivity() {
 
             }
         }
+
+        ibShowPassword.setOnClickListener{
+            showPass = !showPass
+            showPassword(showPass)
+        }
+
+        showPassword(showPass)
+
+    }
+
+    private fun showPassword(isShow: Boolean) {
+        if (isShow) {
+            log_password.transformationMethod = HideReturnsTransformationMethod.getInstance()
+            ibShowPassword.setImageResource(R.drawable.show_password)
+        } else {
+            log_password.transformationMethod = PasswordTransformationMethod.getInstance()
+            ibShowPassword.setImageResource(R.drawable.hide_password)
+        }
+        log_password.setSelection(log_password.text.toString().length)
     }
 
     fun postkeserver(data1: String, data2: String) {
@@ -78,8 +101,6 @@ class LoginActivity : AppCompatActivity() {
 
                             startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
                             finish()
-
-
 
                         } else {
                             info.setText("Username atau Password Salah!")

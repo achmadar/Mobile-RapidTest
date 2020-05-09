@@ -19,8 +19,11 @@ class MenuRumahSakit : AppCompatActivity(), AdapterRumahSakit.OnItemClickListene
 
     override fun onItemClick(rs: RumahSakit) {
 //        send data to detailed activity
-        var intent = Intent(this@MenuRumahSakit, MenuBooking::class.java)
+        var intent = Intent(this@MenuRumahSakit, ProfileRumahSakit::class.java)
         intent.putExtra("nama_rs", rs.nama)
+        intent.putExtra("notelp_rs", rs.telp)
+        intent.putExtra("jadwal_rs", rs.jadwal)
+        intent.putExtra("alamat_rs", rs.alamat)
         startActivity(intent)
     }
 
@@ -53,9 +56,9 @@ class MenuRumahSakit : AppCompatActivity(), AdapterRumahSakit.OnItemClickListene
                         Log.e("_kotlinTitle", jsonObject.optString("nama_rs"))
 
                         var isi1 = jsonObject.optString("nama_rs").toString()
-                        var isi2 = jsonObject.optString("alamat_rs").toString()
-                        var isi3 = jsonObject.optString("notelp_rs").toString()
-                        var isi4 = jsonObject.optString("jadwal_rs").toString()
+                        var isi2 = jsonObject.optString("notelp_rs").toString()
+                        var isi3 = jsonObject.optString("jadwal_rs").toString()
+                        var isi4 = jsonObject.optString("alamat_rs").toString()
 
                         rs.add(RumahSakit("$isi1", "$isi2", "$isi3", "$isi4"))
                     }
