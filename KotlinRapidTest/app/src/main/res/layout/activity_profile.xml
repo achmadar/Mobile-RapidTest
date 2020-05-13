@@ -38,6 +38,7 @@
         android:layout_height="wrap_content">
 
      <TextView
+         android:id="@+id/profile_nama"
          android:text="Nama User"
          android:textColor="@color/colorBlue"
          android:textSize="20sp"
@@ -84,6 +85,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/profile_umur"
                     android:text="24"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorBlack"
@@ -119,6 +121,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/profile_goldar"
                     android:text="AB"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorBlack"
@@ -154,6 +157,7 @@
                     android:layout_height="wrap_content"/>
 
                 <TextView
+                    android:id="@+id/profile_jekel"
                     android:text="Laki-laki"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorBlack"

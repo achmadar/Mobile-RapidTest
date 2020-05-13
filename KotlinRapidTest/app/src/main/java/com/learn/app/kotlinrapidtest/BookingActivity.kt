@@ -1,9 +1,11 @@
 package com.learn.app.kotlinrapidtest
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -41,8 +43,13 @@ class BookingActivity : AppCompatActivity() {
 
             inputbooking(input_nama_pasien, input_nama_rs, input_jadwal, input_keluhan, status)
 
-            val intent = Intent(context, MenuHasil::class.java)
-            startActivity(intent)
+            val builder = AlertDialog.Builder(this)
+            builder.setMessage("Booking Success")
+            builder.setPositiveButton("OK", { dialogInterface: DialogInterface, i: Int ->
+                val intent = Intent(context, DashboardActivity::class.java)
+                startActivity(intent)
+            })
+            builder.show()
         }
 
     }
