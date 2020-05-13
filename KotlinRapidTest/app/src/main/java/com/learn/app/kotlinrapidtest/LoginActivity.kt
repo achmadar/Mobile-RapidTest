@@ -18,6 +18,8 @@ import org.json.JSONObject
 class LoginActivity : AppCompatActivity() {
 
     private var showPass = false
+    var username: String = ""
+    var password: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,8 +50,8 @@ class LoginActivity : AppCompatActivity() {
 
             btn_login.setOnClickListener {
 
-                var username = log_username.text.toString()
-                var password = log_password.text.toString()
+                username = log_username.text.toString()
+                password = log_password.text.toString()
 
                 postkeserver(username, password)
 
@@ -99,10 +101,18 @@ class LoginActivity : AppCompatActivity() {
                             editor.putString("STATUS", statusLogin)
                             editor.apply()
 
+                            val profil = getSharedPreferences("PROFIL", Context.MODE_PRIVATE)
+                            val edit = profil.edit()
+                            edit.putString("username", username)
+                            edit.putString("password", password)
+                            edit.apply()
+
                             startActivity(Intent(this@LoginActivity, DashboardActivity::class.java))
                             finish()
 
                         } else {
+                            log_username.setText("")
+                            log_password.setText("")
                             info.setText("Username atau Password Salah!")
                         }
 

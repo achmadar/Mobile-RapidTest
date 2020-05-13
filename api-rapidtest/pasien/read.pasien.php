@@ -2,7 +2,10 @@
 
 include("../config.php");
 
-$sql = "SELECT * FROM tb_pasien";
+$username = $_POST['username'];
+$password = $_POST['password'];
+
+$sql = "SELECT id, username, password, nama_user, alamat, nohp_user, umur, jeniskelamin, goldarah, ttl_pasien, keterangan FROM tb_pasien WHERE username='$username' AND password='$password'";
 $result = array();
 $query = mysqli_query($db, $sql);
  

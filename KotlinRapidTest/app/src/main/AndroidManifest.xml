@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BookingActivity"></activity>
+        <activity android:name=".EditProfile"></activity>
+        <activity android:name=".BookingActivity" />
         <activity android:name=".ProfileRumahSakit" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".MenuHasil" />
