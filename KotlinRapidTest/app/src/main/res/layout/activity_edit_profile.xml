@@ -18,7 +18,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
-                android:id="@+id/back_register"
+                android:id="@+id/back_edit_profile"
                 android:src="@drawable/back_arrow"
                 android:background="@color/colorWhite"
                 android:layout_marginTop="20dp"

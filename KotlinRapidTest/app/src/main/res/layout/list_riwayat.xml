@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/hasil_nama_riwayat"
+            android:id="@+id/riwayat_nama"
             android:text="NAMA"
             android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/hasil_status"
+            android:id="@+id/riwayat_status"
             android:text="NEGATIF"
             android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/hasil_keterangan"
+            android:id="@+id/riwayat_keterangan"
             android:text="Pasien Sehat"
             android:textColor="@color/colorBlack"
             android:layout_width="wrap_content"

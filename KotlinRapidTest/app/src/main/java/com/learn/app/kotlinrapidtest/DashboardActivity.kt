@@ -50,10 +50,9 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         val sharedPref = getSharedPreferences("PROFIL", Context.MODE_PRIVATE)
-        val dtusername = sharedPref.getString("email", "").toString()
-        val dtpassword = sharedPref.getString("password", "").toString()
+        val dtusername = sharedPref?.getString("username", "").toString()
 
-        getUsers(dtusername, dtpassword)
+        getUsers(dtusername)
 
         val user = getSharedPreferences("PASIEN", Context.MODE_PRIVATE)
         val nama = user?.getString("nama", "").toString()
@@ -62,10 +61,9 @@ class DashboardActivity : AppCompatActivity() {
 
     }
 
-    fun getUsers(data1: String, data2: String) {
+    fun getUsers(data: String) {
         AndroidNetworking.post("http://192.168.0.7/api-rapidtest/pasien/read.pasien.php")
-            .addBodyParameter("username", data1)
-            .addBodyParameter("password", data2)
+            .addBodyParameter("username", data)
             .setPriority(Priority.MEDIUM)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {

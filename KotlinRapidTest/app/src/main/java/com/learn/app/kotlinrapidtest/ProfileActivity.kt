@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.common.Priority
 import com.androidnetworking.error.ANError
@@ -20,6 +21,16 @@ class ProfileActivity : AppCompatActivity() {
 
         val context = this
 
+        back_profile.setOnClickListener {
+            val back = Intent(context, DashboardActivity::class.java)
+            startActivity(back)
+        }
+
+        btn_edit_profile.setOnClickListener {
+            val edit = Intent(context, EditProfile::class.java)
+            startActivity(edit)
+        }
+
         btn_logout.setOnClickListener {
             val sharedPreferences = getSharedPreferences("CEKLOGIN", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
@@ -33,9 +44,8 @@ class ProfileActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("PROFIL", Context.MODE_PRIVATE)
         val dtusername = sharedPref.getString("email", "").toString()
-        val dtpassword = sharedPref.getString("password", "").toString()
 
-        getUsers(dtusername, dtpassword)
+        getUsers(dtusername)
 
         val pasien = getSharedPreferences("PASIEN", Context.MODE_PRIVATE)
         val nama = pasien?.getString("nama", "").toString()
@@ -56,10 +66,9 @@ class ProfileActivity : AppCompatActivity() {
 
     }
 
-    fun getUsers(data1: String, data2: String) {
+    fun getUsers(data: String) {
         AndroidNetworking.post("http://192.168.0.7/api-rapidtest/pasien/read.pasien.php")
-            .addBodyParameter("username", data1)
-            .addBodyParameter("password", data2)
+            .addBodyParameter("username", data)
             .setPriority(Priority.MEDIUM)
             .build()
             .getAsJSONObject(object : JSONObjectRequestListener {

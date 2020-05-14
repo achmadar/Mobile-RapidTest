@@ -2,7 +2,9 @@
 
 include("../config.php");
 
-$sql = "SELECT * FROM tb_antrian";
+$nama_pasien = $_POST['nama_pasien'];
+
+$sql = "SELECT * FROM tb_antrian WHERE nama_pasien='$nama_pasien' AND Status='MENUNGGU'";
 $result = array();
 $query = mysqli_query($db, $sql);
  
