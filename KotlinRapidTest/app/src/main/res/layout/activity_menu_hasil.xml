@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".MenuHasil">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:background="@drawable/bg_home"
@@ -42,7 +42,7 @@
             android:padding="10dp"
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <TextView
                 android:text="Dalam Antrian"
@@ -59,7 +59,7 @@
                 android:paddingLeft="20dp"
                 android:paddingBottom="15dp"
                 android:paddingRight="20dp"
-                android:layout_height="160dp"
+                android:layout_height="210dp"
                 android:layout_width="match_parent">
 
                 <TextView
@@ -71,7 +71,7 @@
 
                 <TextView
                     android:id="@+id/hasil_nama"
-                    android:text="NAMA"
+                    android:text="BELUM ADA ANTRIAN"
                     android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -86,7 +86,6 @@
 
                 <TextView
                     android:id="@+id/hasil_rs"
-                    android:text="RSUD Kota Malang"
                     android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -101,7 +100,20 @@
 
                 <TextView
                     android:id="@+id/hasil_jadwal"
-                    android:text="14:00"
+                    android:textColor="@color/colorBlack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:text="Status Proses"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorGray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/hasil_proses"
                     android:textColor="@color/colorBlack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
@@ -111,14 +123,15 @@
             <TextView
                 android:text="Riwayat"
                 android:textSize="22sp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="20dp"
                 android:textColor="@color/colorBlue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <ListView
-                android:id="@+id/list_riwayat"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/listRiwayat"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
