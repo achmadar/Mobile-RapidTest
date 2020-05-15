@@ -46,7 +46,7 @@ class RegisterActivity : AppCompatActivity() {
                 if (reg_password == reg_konfirm_pass) {
                     konfirm_password.setText("")
                     inputdata(reg_username,reg_password, reg_konfirm_pass, reg_nama,  reg_alamat, reg_nohp, reg_umur, reg_jenis_kelamin, reg_gol_darah, reg_ttl)
-                    val intent = Intent(context, DashboardActivity::class.java)
+                    val intent = Intent(context, LoginActivity::class.java)
                     startActivity(intent)
                 } else {
                     konfirm_password.setText("Password not match!")
